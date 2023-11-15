@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .square {
+        width: 100px;
+        height: 100px;
+        border: 2px solid #2c3e50;
+      }
+    </style>
+    <title>Square with Border</title>
+  </head>
+  <body>
+    <div class="square" id="ll"></div>
+  </body>
+</html>
+
+<script>
+  let square = document.getElementById("ll");
+  square.style.background = "blue";
+
+  square.addEventListener("mouseleave", function () {
+    square.style.background = "red";
+  });
+
+  square.addEventListener("mouseover", function () {
+    square.style.background = "yellow";
+  });
+</script>

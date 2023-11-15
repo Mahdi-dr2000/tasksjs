@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="jordan.png" hidden id="jordan" />
+    <img src="lebanon.png" hidden id="lebanon" />
+    <select id="select">
+      <option selected disabled>Select Country</option>
+      <option value="jordan">jordan</option>
+      <option value="lebanon">lebanon</option>
+    </select>
+    <div id="result"></div>
+  </body>
+</html>
+
+<script>
+  let select = document.getElementById("select");
+  select.addEventListener("change", function () {
+    document.getElementById("result").innerHTML = "";
+    value = select.options[select.selectedIndex].text;
+    let jordan = document.getElementById("jordan");
+    let lebanon = document.getElementById("lebanon");
+
+    if (value === "jordan") {
+      jordan.style.display = "block";
+      lebanon.style.display = "none";
+    } else if ((value = "lebanon")) {
+      jordan.style.display = "none";
+      lebanon.style.display = "block";
+    }
+  });
+</script>

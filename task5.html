@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label>Passsword(min 6 characters):</label
+      ><input type="password" id="password" />
+      <div id="result"></div>
+      <br /><br />
+      <label>Repeat Passsword</label
+      ><input type="password" placeholder="Password" id="repeatpassword" />
+      <div id="result2"></div>
+      <button id="btn" hidden>submit</button>
+    </form>
+  </body>
+</html>
+
+<script>
+  let password = document.getElementById("password");
+  let repeatpassword = document.getElementById("repeatpassword");
+  let btn = document.getElementById("btn");
+
+  password.addEventListener("input", function () {
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("result2").innerHTML = "";
+    let valuepassword = password.value.trim();
+    let repeatpasswordvalue = repeatpassword.value.trim();
+
+    if (password.value.length >= 6) {
+      document.getElementById("result").innerHTML = "";
+      btn.style.display = "block";
+    } else {
+      document.getElementById("result").innerHTML = "Too short";
+      btn.style.display = "none";
+    }
+    checkpasswords();
+  });
+
+  function checkpasswords() {
+    let valuepassword = password.value.trim();
+    let repeatpasswordvalue = repeatpassword.value.trim();
+    if (valuepassword == repeatpasswordvalue) {
+      document.getElementById("result2").innerHTML = "";
+      if (password.value.length >= 6) {
+        btn.style.display = "block";
+      }
+    } else {
+      document.getElementById("result2").innerHTML = "paswwords not match";
+      btn.style.display = "none";
+    }
+  }
+  repeatpassword.addEventListener("input", function () {
+    checkpasswords();
+  });
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      What is lorem ipsum <button type="submit" id="show1" href="">show</button>
+    </h1>
+    <p id="div1" hidden>lorem lroem <button id="btn1">hide</button></p>
+    <br /><br /><br /><br />
+    <h1>Why do use it <button id="show2" hidden>show</button></h1>
+    <div id="div2">
+      <p>llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll</p>
+      <button id="btn2">hide</button>
+    </div>
+    <br /><br /><br /><br />
+
+    <h1>Where does it come form<button id="show3">show</button></h1>
+    <div id="div3" hidden>
+      <p>llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll</p>
+      <button id="btn3">hide</button>
+    </div>
+  </body>
+</html>
+
+<script>
+  document.getElementById("show1").addEventListener("click", function () {
+    document.getElementById("div1").style.display = "block";
+  });
+  document.getElementById("btn1").addEventListener("click", function () {
+    document.getElementById("div1").style.display = "none";
+  });
+
+  document.getElementById("btn2").addEventListener("click", function () {
+    document.getElementById("div2").style.display = "none";
+    document.getElementById("show2").style.display = "block";
+  });
+  document.getElementById("show2").addEventListener("click", function () {
+    document.getElementById("div2").style.display = "block";
+    document.getElementById("show2").style.display = "none";
+  });
+
+  document.getElementById("show3").addEventListener("click", function () {
+    document.getElementById("show3").style.display = "none";
+    document.getElementById("div3").style.display = "block";
+
+  });
+  document.getElementById("btn3").addEventListener("click", function () {
+    document.getElementById("div3").style.display = "none";
+    document.getElementById("show3").style.display = "block";
+
+  });
+</script>

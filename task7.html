@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select  id="selected">
+        <option selected value="Arial">Arial</option>
+        <option value="Cursive">Cursive</option>
+        <option value="Fantasy">Fantasy</option>
+    </select>
+    <label>italic</label> <input type="checkbox" / id="italic"> 
+    <label>bold</label> <input type="checkbox" / id="bold">
+    <label>underline</label> <input type="checkbox" / id="underline">
+    <br><br>
+    <textarea style="font-family: Arial, Helvetica, sans-serif;" id="textarea">
+
+    </textarea>
+  </body>
+</html>
+
+<script>
+    italic=document.getElementById('italic');
+    let textarea=document.getElementById('textarea');
+    italic.addEventListener('change',function()
+    {
+        
+         if(italic.checked)
+         {
+            textarea.style.fontStyle="italic";
+         }
+         else
+         {
+            textarea.style.fontStyle="normal";
+         }
+
+
+    });
+    bold=document.getElementById('bold');
+    bold.addEventListener('change',function()
+    {
+         
+        if(bold.checked)
+        {
+            textarea.style.fontWeight='bold';
+        }
+        else
+        {
+            textarea.style.fontWeight='normal';
+        }
+    });
+
+    underline=document.getElementById('underline');
+
+    underline.addEventListener('change',function()
+    {
+            if(underline.checked)
+            {
+                textarea.style.textDecoration='underline';
+            }
+            else
+            {
+                textarea.style.textDecoration='none';
+
+            }
+    });
+
+    selected=document.getElementById('selected');
+    selected.addEventListener('change',function()
+    {
+      selectedfont=selected.options[selected.selectedIndex].value;
+      textarea.style.fontFamily=selectedfont;
+    });
+
+
+</script>
